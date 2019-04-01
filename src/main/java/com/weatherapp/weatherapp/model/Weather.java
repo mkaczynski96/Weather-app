@@ -1,8 +1,5 @@
 package com.weatherapp.weatherapp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Weather {
 
     private Integer id;
