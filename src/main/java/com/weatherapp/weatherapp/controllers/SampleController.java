@@ -32,9 +32,6 @@ public class SampleController {
     @FXML
     Text cloudsField;
 
-    @FXML
-    Text precipitationField;
-
     private final String URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     private final String URL_APPKEY = "&appid=3662fc666bf0b718e1cd5b3fa49a9a08";
     private RestTemplate restTemplate = new RestTemplate();
@@ -61,7 +58,6 @@ public class SampleController {
             errorResponse = false;
         } else {
             JsonNode root = mapper.readTree(response.getBody());
-            JsonNode cod = root.path("cod");
             JsonNode city = root.path("name");
             if (cityTextField.getText().matches(".*\\d.*")) {
                 alertInf.setTitle("City");
@@ -71,7 +67,17 @@ public class SampleController {
                 alertInf.showAndWait();
             } else {
                 JsonNode temp = root.path("main").path("temp");
-                temperatureField.setText(temp.toString());
+                JsonNode hum = root.path("main").path("humidity");
+                JsonNode press = root.path("main").path("pressure");
+                JsonNode wind = root.path("wind").path("speed");
+                JsonNode clouds = root.path("clouds").path("all");
+
+                int tempCelc = (int) (temp.asDouble() - 273.15);
+                temperatureField.setText(tempCelc+"°C");
+                humidityField.setText(hum.toString() + "%");
+                pressureField.setText(press.toString());
+                windSpeedField.setText(wind.toString() + "m/s");
+                cloudsField.setText(clouds.toString() + "%");
             }
         }
 

@@ -19,13 +19,11 @@
         <Text layoutX="174.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure:" />
         <Text layoutX="174.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:" />
         <Text layoutX="425.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clouds:" />
-        <Text layoutX="425.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precipitation:" />
         <Text id="temperatureFiled" fx:id="temperatureField" layoutX="264.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
         <Text id="humidityArea" fx:id="humidityField" layoutX="239.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
         <Text fx:id="pressureField" layoutX="239.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
         <Text fx:id="windSpeedField" layoutX="259.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
         <Text id="cloudsArea" fx:id="cloudsField" layoutX="475.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-        <Text id="precipationField" fx:id="precipitationField" layoutX="516.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
         <Button fx:id="searchButton" layoutX="420.0" layoutY="157.0" minHeight="25.951171875" mnemonicParsing="false" onMouseClicked="#searchWeather" prefHeight="25.9511803222631" text="Search" />
       </children>
     </Pane>
