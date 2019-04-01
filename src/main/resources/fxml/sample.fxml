@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane alignment="CENTER" hgap="10.0" prefHeight="471.0" prefWidth="655.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.weatherapp.weatherapp.controllers.SampleController">
-    <children>
-        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <children>
-                <Text layoutX="327.0" layoutY="46.0" scaleX="5.243069275835377" scaleY="5.31057652381291" strokeType="OUTSIDE" strokeWidth="0.0" text="WeatherApp" />
-                <TextField fx:id="cityTextField" layoutX="220.0" layoutY="157.0" prefWidth="200.0" />
-                <Text layoutX="179.0" layoutY="176.0" scaleX="1.3034845126313117" scaleY="1.0076309980471172" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
-                <Text layoutX="174.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:" />
-                <Text layoutX="174.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humidity:" />
-                <Text layoutX="174.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure:" />
-                <Text layoutX="174.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:" />
-                <Text layoutX="425.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clouds:" />
-                <Text layoutX="425.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precipitation:" />
-                <Text id="temperatureFiled" fx:id="temperatureField" layoutX="264.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-                <Text id="humidityArea" fx:id="humidityField" layoutX="239.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-                <Text fx:id="pressureField" layoutX="239.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-                <Text fx:id="windSpeedField" layoutX="259.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-                <Text id="cloudsArea" fx:id="cloudsField" layoutX="475.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-                <Text id="precipationField" fx:id="precipitationField" layoutX="516.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-                <Button fx:id="searchButton" layoutX="420.0" layoutY="157.0" minHeight="25.951171875" mnemonicParsing="false" onMouseClicked="#searchWeather" prefHeight="25.9511803222631" text="Search" />
-            </children>
-        </Pane>
-    </children>
-    <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-    </rowConstraints>
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="600.0" prefWidth="800.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.weatherapp.weatherapp.controllers.SampleController">
+  <children>
+    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <Text layoutX="327.0" layoutY="46.0" scaleX="5.243069275835377" scaleY="5.31057652381291" strokeType="OUTSIDE" strokeWidth="0.0" text="WeatherApp" />
+        <TextField fx:id="cityTextField" layoutX="220.0" layoutY="157.0" prefWidth="200.0" />
+        <Text layoutX="179.0" layoutY="176.0" scaleX="1.3034845126313117" scaleY="1.0076309980471172" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
+        <Text layoutX="174.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:" />
+        <Text layoutX="174.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humidity:" />
+        <Text layoutX="174.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure:" />
+        <Text layoutX="174.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:" />
+        <Text layoutX="425.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clouds:" />
+        <Text layoutX="425.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precipitation:" />
+        <Text id="temperatureFiled" fx:id="temperatureField" layoutX="264.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+        <Text id="humidityArea" fx:id="humidityField" layoutX="239.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+        <Text fx:id="pressureField" layoutX="239.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+        <Text fx:id="windSpeedField" layoutX="259.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+        <Text id="cloudsArea" fx:id="cloudsField" layoutX="475.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+        <Text id="precipationField" fx:id="precipitationField" layoutX="516.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+        <Button fx:id="searchButton" layoutX="420.0" layoutY="157.0" minHeight="25.951171875" mnemonicParsing="false" onMouseClicked="#searchWeather" prefHeight="25.9511803222631" text="Search" />
+      </children>
+    </Pane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
 </GridPane>
