@@ -32,14 +32,15 @@ public class SampleController {
     @FXML
     Text cloudsField;
 
-    private final String URL = "http://api.openweathermap.org/data/2.5/weather?q=";
-    private final String URL_APPKEY = "&appid=3662fc666bf0b718e1cd5b3fa49a9a08";
+    private final static String URL = "http://api.openweathermap.org/data/2.5/weather?q=";
+    private final static String URL_APPKEY = "&appid=3662fc666bf0b718e1cd5b3fa49a9a08";
+    private boolean errorResponse = false;
     private RestTemplate restTemplate = new RestTemplate();
     private ResponseEntity<String> response;
-    private boolean errorResponse = false;
+    private ObjectMapper mapper = new ObjectMapper();
+
 
     public void searchWeather() throws Exception {
-
         Alert alertErr = new Alert(Alert.AlertType.ERROR);
         Alert alertInf = new Alert(Alert.AlertType.INFORMATION);
 
@@ -49,40 +50,42 @@ public class SampleController {
             errorResponse = true;
         }
 
-        ObjectMapper mapper = new ObjectMapper();
+        /* If there was Http Exception then shows error alert */
         if (errorResponse) {
             alertErr.setTitle("Error");
             alertErr.setHeaderText(null);
-            alertErr.setContentText("Failed to loaded data for your city! Please make sure you entered correct city!");
+            alertErr.setContentText("Failed to load data! Please make sure you entered correct city!");
             alertErr.showAndWait();
             errorResponse = false;
         } else {
+            /* Reading tree of json response body */
             JsonNode root = mapper.readTree(response.getBody());
             JsonNode city = root.path("name");
+
+            /* If city was entered as number then program shows city name */
             if (cityTextField.getText().matches(".*\\d.*")) {
                 alertInf.setTitle("City");
                 alertInf.setHeaderText(null);
                 alertInf.setContentText("City: " + city);
-
                 alertInf.showAndWait();
             } else {
+                /* Gets values of keys from json response */
                 JsonNode temp = root.path("main").path("temp");
                 JsonNode hum = root.path("main").path("humidity");
                 JsonNode press = root.path("main").path("pressure");
                 JsonNode wind = root.path("wind").path("speed");
                 JsonNode clouds = root.path("clouds").path("all");
 
+                /* Convert from Kelvin to Celsius */
                 int tempCelc = (int) (temp.asDouble() - 273.15);
-                temperatureField.setText(tempCelc+"°C");
+
+                /* Sets texts to fields */
+                temperatureField.setText(tempCelc + "°C");
                 humidityField.setText(hum.toString() + "%");
-                pressureField.setText(press.toString());
-                windSpeedField.setText(wind.toString() + "m/s");
+                pressureField.setText(press.toString() + " hPa");
+                windSpeedField.setText(wind.toString() + " m/s");
                 cloudsField.setText(clouds.toString() + "%");
             }
         }
-
-
     }
-
-
 }

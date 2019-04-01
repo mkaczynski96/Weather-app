@@ -13,7 +13,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class WeatherappApplication extends Application {
 
     private ConfigurableApplicationContext springContext;
-    private Parent rootNode;
     private FXMLLoader fxmlLoader;
 
     public static void main(String[] args) {
@@ -28,11 +27,11 @@ public class WeatherappApplication extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         fxmlLoader.setLocation(getClass().getResource("/fxml/sample.fxml"));
-        rootNode = fxmlLoader.load();
+        Parent rootNode = fxmlLoader.load();
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Weather Application");
         Scene scene = new Scene(rootNode, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
