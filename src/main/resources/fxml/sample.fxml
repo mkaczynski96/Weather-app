@@ -33,7 +33,7 @@
             <Text fx:id="pressureField" layoutX="319.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
             <Text fx:id="windSpeedField" layoutX="339.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
             <Text id="cloudsArea" fx:id="cloudsField" layoutX="555.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Button fx:id="searchButton" layoutX="500.0" layoutY="109.0" minHeight="25.951158251948073" mnemonicParsing="false" onMouseClicked="#searchWeather" prefHeight="25.951158251948073" text="Search" />
+            <Button fx:id="searchButton" layoutX="500.0" layoutY="106.0" minHeight="25.951158251948073" mnemonicParsing="false" onKeyPressed="#searchWeather" onMouseClicked="#searchWeather" prefHeight="38.99999482421117" prefWidth="101.9173583984375" text="Search" />
           </children>
         </Pane>
       </center>
