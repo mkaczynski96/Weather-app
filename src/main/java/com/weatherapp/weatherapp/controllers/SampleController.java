@@ -11,6 +11,25 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class SampleController {
+
+    //Static texts
+    @FXML
+    Text temperatureText;
+
+    @FXML
+    Text humidityText;
+
+    @FXML
+    Text pressureText;
+
+    @FXML
+    Text windSpeedText;
+
+    @FXML
+    Text cloudsText;
+
+
+    //Editable texts
     @FXML
     TextField cityTextField;
 
@@ -34,6 +53,51 @@ public class SampleController {
     private boolean errorResponse = false; //If true(caught exception) its shows error alert
     private Response response;
     private RestTemplate restTemplate = new RestTemplate();
+
+
+    public void english(){
+        temperatureText.setText("Temperature:");
+        humidityText.setText("Humidity:");
+        pressureText.setText("Pressure:");
+        windSpeedText.setText("Wind speed:");
+        cloudsText.setText("Clouds:");
+    }
+
+    public void polish(){
+        temperatureText.setText("Temperatura:");
+        humidityText.setText("Wilgotność:");
+        pressureText.setText("Ciśnienie:");
+        windSpeedText.setText("Prędkość wiatru:");
+        cloudsText.setText("Zachmurzenie:");
+    }
+
+    public void german(){
+        temperatureText.setText("Temperatur:");
+        humidityText.setText("Feuchtigkeit:");
+        pressureText.setText("Druck:");
+        windSpeedText.setText("Windgeschwindigkeit:");
+        cloudsText.setText("Trüb:");
+    }
+
+    public void french(){
+        temperatureText.setText("Température:");
+        humidityText.setText("Humidité:");
+        pressureText.setText("Pression:");
+        windSpeedText.setText("La vitesse du vent:");
+        cloudsText.setText("Nuageux:");
+    }
+
+    public void about(){
+        Alert alertInf = new Alert(Alert.AlertType.INFORMATION);
+        alertInf.setTitle("About");
+        alertInf.setHeaderText(null);
+        alertInf.setContentText("Author: Michal Kaczynski \nWeatherApp 2019 \nopenWeatherAPI");
+        alertInf.showAndWait();
+    }
+
+    public void closeApp(){
+        System.exit(0);
+    }
 
     public void searchWeather() throws Exception {
 

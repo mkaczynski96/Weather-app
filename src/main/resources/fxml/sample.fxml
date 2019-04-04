@@ -1,52 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane alignment="CENTER" hgap="10.0" prefHeight="600.0" prefWidth="800.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.weatherapp.weatherapp.controllers.SampleController">
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #353638;" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.weatherapp.weatherapp.controllers.SampleController">
   <children>
     <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
       <bottom>
-        <Pane prefHeight="39.0" prefWidth="800.0">
+        <AnchorPane prefHeight="30.0" prefWidth="800.0">
           <children>
-            <Text fill="#9f9f9f" layoutX="186.0" layoutY="23.0" scaleX="1.028561968062992" scaleY="0.9248829093542567" strokeType="OUTSIDE" strokeWidth="0.0" text="KACZYNSKI MICHAL 2019 | https://github.com/mkaczynski96">
+            <Text fill="#9f9f9f" layoutX="223.0" layoutY="21.0" scaleX="1.028561968062992" scaleY="0.9248829093542567" strokeType="OUTSIDE" strokeWidth="0.0" text="KACZYNSKI MICHAL 2019 | github.com/mkaczynski96">
               <font>
-                <Font size="16.0" />
+                <Font size="15.0" />
               </font>
             </Text>
           </children>
-        </Pane>
+        </AnchorPane>
       </bottom>
       <center>
-        <Pane prefHeight="200.0" prefWidth="200.0">
+        <FlowPane prefHeight="200.0" prefWidth="200.0">
           <children>
-            <TextField fx:id="cityTextField" layoutX="300.0" layoutY="109.0" prefWidth="200.0" />
-            <Text layoutX="262.0" layoutY="128.0" scaleX="1.1055528199579112" scaleY="1.0076309980471172" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
-            <Text layoutX="254.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:" />
-            <Text layoutX="254.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humidity:" />
-            <Text layoutX="254.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure:" />
-            <Text layoutX="254.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:" />
-            <Text layoutX="505.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clouds:" />
-            <Text id="temperatureFiled" fx:id="temperatureField" layoutX="344.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Text id="humidityArea" fx:id="humidityField" layoutX="319.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Text fx:id="pressureField" layoutX="319.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Text fx:id="windSpeedField" layoutX="339.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Text id="cloudsArea" fx:id="cloudsField" layoutX="555.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-            <Button fx:id="searchButton" layoutX="500.0" layoutY="106.0" minHeight="25.951158251948073" mnemonicParsing="false" onKeyPressed="#searchWeather" onMouseClicked="#searchWeather" prefHeight="38.99999482421117" prefWidth="101.9173583984375" text="Search" />
+            <VBox prefHeight="361.0" prefWidth="800.0000999999975">
+              <children>
+                <HBox prefHeight="145.0" prefWidth="801.0">
+                  <children>
+                    <AnchorPane prefHeight="186.0" prefWidth="800.0">
+                      <children>
+                        <TextField fx:id="cityTextField" layoutX="268.0" layoutY="60.0" prefWidth="226.0" />
+                        <Button id="searchButton" layoutX="507.0" layoutY="58.0" minHeight="19.6826171875" mnemonicParsing="false" onKeyPressed="#searchWeather" onMouseClicked="#searchWeather" prefHeight="30.0" prefWidth="102.0" text="Search" />
+                        <Text fill="WHITE" layoutX="228.0" layoutY="79.0" scaleX="1.1055528199579112" scaleY="1.0076309980471172" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+                <HBox prefHeight="175.0" prefWidth="801.0">
+                  <children>
+                    <AnchorPane prefHeight="175.0" prefWidth="800.0">
+                      <children>
+                        <Text id="temperature" fx:id="temperatureText" fill="WHITE" layoutX="238.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:" />
+                        <Text id="humidity" fx:id="humidityText" fill="WHITE" layoutX="238.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humidity:" />
+                        <Text id="pressure" fx:id="pressureText" fill="WHITE" layoutX="238.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure:" />
+                        <Text fx:id="windSpeedText" fill="WHITE" layoutX="238.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:" />
+                        <Text fx:id="cloudsText" fill="WHITE" layoutX="462.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clouds:" />
+                        <Text fx:id="temperatureField" fill="WHITE" layoutX="394.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                        <Text fx:id="humidityField" fill="WHITE" layoutX="394.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                        <Text fx:id="pressureField" fill="WHITE" layoutX="394.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                        <Text fx:id="windSpeedField" fill="WHITE" layoutX="394.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                        <Text fx:id="cloudsField" fill="WHITE" layoutX="573.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
           </children>
-        </Pane>
+        </FlowPane>
       </center>
       <top>
-        <Pane prefHeight="118.99990000000253" prefWidth="800.0">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
           <children>
-            <Text layoutX="257.0" layoutY="83.0" scaleX="1.0742360053707314" scaleY="1.3710773958941629" strokeType="OUTSIDE" strokeWidth="0.0" text="WeatherApp">
+            <MenuBar id="menu" disable="false" focusTraversable="false" layoutX="0.0" layoutY="0.0" prefWidth="800.0" style="-fx-background-color: #2f3133;&#10;-fx-text-fill: #ffffff;" visible="true">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-background-color:#8c8c8c;" text="Program">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#about" style="" text="About" />
+                    <Menu mnemonicParsing="false" text="Language">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#english" style="" text="English" />
+                        <MenuItem mnemonicParsing="false" onAction="#polish" style="" text="Polski" />
+                        <MenuItem mnemonicParsing="false" onAction="#german" style="" text="Deutsch" />
+                        <MenuItem mnemonicParsing="false" onAction="#french" style="" text="Francais" />
+                      </items>
+                    </Menu>
+                    <MenuItem mnemonicParsing="false" onAction="#closeApp" style="" text="Exit" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Text fill="WHITE" layoutX="232.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather">
               <font>
-                <Font size="48.0" />
+                <Font size="63.0" fx:id="x1" />
               </font>
             </Text>
+            <Text fill="#ff6666" font="$x1" layoutX="468.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="App" />
           </children>
-        </Pane>
+        </AnchorPane>
       </top>
     </BorderPane>
   </children>
