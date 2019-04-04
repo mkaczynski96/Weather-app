@@ -129,8 +129,8 @@ public class SampleController {
             /* Sets texts to fields */
             temperatureField.setText(tempCelc + "°C");
             humidityField.setText(response.getMain().getHumidity() + "%");
-            pressureField.setText(response.getMain().getPressure() + " hPa");
-            windSpeedField.setText(response.getWind().getSpeed() + " m/s");
+            pressureField.setText(response.getMain().getPressure() + "hPa");
+            windSpeedField.setText(response.getWind().getSpeed() + "m/s");
             cloudsField.setText(response.getClouds().getAll() + "%");
 
         }
