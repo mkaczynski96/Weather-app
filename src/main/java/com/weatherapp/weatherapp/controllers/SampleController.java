@@ -50,7 +50,7 @@ public class SampleController {
 
     private final static String URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     private final static String URL_APPKEY = "&appid=3662fc666bf0b718e1cd5b3fa49a9a08";
-    private boolean errorResponse = false; //If true(caught exception) its shows error alert
+    private boolean errorResponse = false; //If true(caught exception) it shows error alert
     private Response response;
     private RestTemplate restTemplate = new RestTemplate();
 
